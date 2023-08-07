@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace = "fragments/head :: head"></head>
+
+<body class="crm_body_bg">
+
+
+	<nav th:replace="fragments/menu :: menu"></nav>
+
+	<section class="main_content dashboard_part large_header_bg">
+
+		<div class="container-fluid g-0">
+			<div class="row">
+				<div class="col-lg-12 p-0 ">
+					<div class="header_iner d-flex justify-content-between align-items-center">
+						<div class="sidebar_icon d-lg-none">
+							<i class="ti-menu"></i>
+						</div>
+						<label class="form-label switch_toggle d-none d-lg-block" for="checkbox">
+							<input type="checkbox" id="checkbox">
+							<div class="slider round open_miniSide"></div>
+						</label>
+						<div class="header_right d-flex justify-content-between align-items-center">
+							<div class="header_notification_warp d-flex align-items-center">
+								<li>
+									<div class="serach_button">
+										<i class="ti-search"></i>
+										<div class="serach_field-area d-flex align-items-center">
+											<div class="search_inner">
+												<form action="#">
+													<div class="search_field">
+														<input type="text" placeholder="Search here...">
+													</div>
+													<button class="close_search"> <i class="ti-search"></i> </button>
+												</form>
+											</div>
+											<span class="f_s_14 f_w_400 ml_25 white_text text_white">Apps</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<a class="bell_notification_clicker" href="#"> <img src="img/icon/bell.svg" alt>
+										<span>2</span>
+									</a>
+
+									<div class="Menu_NOtification_Wrap">
+										<div class="notification_Header">
+											<h4>Notifications</h4>
+										</div>
+										<div class="Notification_body">
+
+											<div class="single_notify d-flex align-items-center">
+												<div class="notify_thumb">
+													<a href="#"><img src="img/staf/2.png" alt></a>
+												</div>
+												<div class="notify_content">
+													<a href="#">
+														<h5>Cool Marketing </h5>
+													</a>
+													<p>Lorem ipsum dolor sit amet</p>
+												</div>
+											</div>
+
+											<div class="single_notify d-flex align-items-center">
+												<div class="notify_thumb">
+													<a href="#"><img src="img/staf/4.png" alt></a>
+												</div>
+												<div class="notify_content">
+													<a href="#">
+														<h5>Awesome packages</h5>
+													</a>
+													<p>Lorem ipsum dolor sit amet</p>
+												</div>
+											</div>
+
+											<div class="single_notify d-flex align-items-center">
+												<div class="notify_thumb">
+													<a href="#"><img src="img/staf/3.png" alt></a>
+												</div>
+												<div class="notify_content">
+													<a href="#">
+														<h5>what a packages</h5>
+													</a>
+													<p>Lorem ipsum dolor sit amet</p>
+												</div>
+											</div>
+
+											<div class="single_notify d-flex align-items-center">
+												<div class="notify_thumb">
+													<a href="#"><img src="img/staf/2.png" alt></a>
+												</div>
+												<div class="notify_content">
+													<a href="#">
+														<h5>Cool Marketing </h5>
+													</a>
+													<p>Lorem ipsum dolor sit amet</p>
+												</div>
+											</div>
+
+											<div class="single_notify d-flex align-items-center">
+												<div class="notify_thumb">
+													<a href="#"><img src="img/staf/4.png" alt></a>
+												</div>
+												<div class="notify_content">
+													<a href="#">
+														<h5>Awesome packages</h5>
+													</a>
+													<p>Lorem ipsum dolor sit amet</p>
+												</div>
+											</div>
+
+											<div class="single_notify d-flex align-items-center">
+												<div class="notify_thumb">
+													<a href="#"><img src="img/staf/3.png" alt></a>
+												</div>
+												<div class="notify_content">
+													<a href="#">
+														<h5>what a packages</h5>
+													</a>
+													<p>Lorem ipsum dolor sit amet</p>
+												</div>
+											</div>
+										</div>
+										<div class="nofity_footer">
+											<div class="submit_button text-center pt_20">
+												<a href="#" class="btn_1">See More</a>
+											</div>
+										</div>
+									</div>
+
+								</li>
+								<li>
+									<a class="CHATBOX_open" href="#"> <img src="img/icon/msg.svg" alt> <span>2</span>
+									</a>
+								</li>
+							</div>
+							<div class="profile_info">
+								<img src="img/client_img.png" alt="#">
+								<div class="profile_info_iner">
+									<div class="profile_author_name">
+										<p>Neurologist </p>
+										<h5>Dr. Robar Smith</h5>
+									</div>
+									<div class="profile_info_details">
+										<a href="#">My Profile </a>
+										<a href="#">Settings</a>
+										<a href="#">Log Out </a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main_content_iner overly_inner ">
+			<div class="container-fluid p-0 ">
+
+				<div class="row">
+					<div class="col-12">
+						<div class="page_title_box d-flex flex-wrap align-items-center justify-content-between">
+							<div class="page_title_left">
+								<h3 class="f_s_25 f_w_700 dark_text">Dashboard</h3>
+								<ol class="breadcrumb page_bradcam mb-0">
+									<li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
+									<li class="breadcrumb-item active">Default</li>
+								</ol>
+							</div>
+							<div class="page_title_right">
+								<div class="page_date_button">
+									August 1, 2020 - August 31, 2020
+								</div>
+								<div class="dropdown common_bootstrap_button ">
+									<span class="dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown"
+										aria-expanded="false">
+										action
+									</span>
+									<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item f_s_16 f_w_600" href="#"> Download</a>
+										<a class="dropdown-item f_s_16 f_w_600" href="#"> Print</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row ">
+					<div class="col-xl-4 ">
+						<div class="white_card card_height_100 mb_30 social_media_card">
+							<div class="white_card_header">
+								<div class="main-title">
+									<h3 class="m-0">Social media</h3>
+									<span>About Your Social Popularity</span>
+								</div>
+							</div>
+							<div class="media_thumb ml_25">
+								<img src="img/media.svg" alt>
+							</div>
+							<div class="media_card_body">
+								<div class="media_card_list">
+									<div class="single_media_card">
+										<span>Followers</span>
+										<h3>35.6 K</h3>
+									</div>
+									<div class="single_media_card">
+										<span>Followers</span>
+										<h3>35.6 K</h3>
+									</div>
+									<div class="single_media_card">
+										<span>Followers</span>
+										<h3>35.6 K</h3>
+									</div>
+									<div class="single_media_card">
+										<span>Followers</span>
+										<h3>35.6 K</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4">
+						<div class="white_card card_height_100 mb_30">
+							<div class="white_card_header">
+								<div class="box_header m-0">
+									<div class="main-title">
+										<h3 class="m-0">Visitors by Browser</h3>
+										<span>15654 Visaitors</span>
+									</div>
+									<div class="float-lg-right float-none common_tab_btn justify-content-end">
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link active" href="#">Week</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Day</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="white_card_body">
+								<div id="chart-currently"></div>
+								<div class="monthly_plan_wraper">
+									<div class="single_plan d-flex align-items-center justify-content-between">
+										<div class="plan_left d-flex align-items-center">
+											<div class="thumb">
+												<img src="img/crome.png" alt>
+											</div>
+											<div>
+												<h5>Chrome Users</h5>
+												<span>Today</span>
+											</div>
+										</div>
+										<span class="brouser_btn">+2155</span>
+									</div>
+									<div class="single_plan d-flex align-items-center justify-content-between">
+										<div class="plan_left d-flex align-items-center">
+											<div class="thumb">
+												<img src="img/safari.png" alt>
+											</div>
+											<div>
+												<h5>Chrome Users</h5>
+												<span>Today</span>
+											</div>
+										</div>
+										<span class="brouser_btn">+54</span>
+									</div>
+									<div class="single_plan d-flex align-items-center justify-content-between">
+										<div class="plan_left d-flex align-items-center">
+											<div class="thumb">
+												<img src="img/OBJECTS.png" alt>
+											</div>
+											<div>
+												<h5>Chrome Users</h5>
+												<span>Today</span>
+											</div>
+										</div>
+										<span class="brouser_btn">+22</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 ">
+						<div class="white_card card_height_100 mb_30">
+							<div class="white_card_header">
+								<div class="main-title">
+									<h3 class="m-0">Visitors by Device</h3>
+									<span>15654 Visaitors</span>
+								</div>
+							</div>
+							<div class="white_card_body ">
+								<div class="card_container">
+									<div id="platform_type_dates_donut" style="height:280px"></div>
+								</div>
+								<div class="devices_btn text-center">
+									<a class="color_button color_button2" href="#">Android</a>
+									<a class="color_button" href="#">iphone</a>
+									<a class="color_button color_button3" href="#">Others</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-8 ">
+						<div class="white_card mb_30 card_height_100">
+							<div class="white_card_header">
+								<div class="box_header m-0">
+									<div class="main-title">
+										<h3 class="m-0">Revenue</h3>
+									</div>
+									<div class="float-lg-right float-none common_tab_btn2 justify-content-end">
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">Month</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link active" href="#">Week</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Day</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="white_card_body">
+								<div id="marketchart"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4">
+						<div class="white_card card_height_100 mb_30">
+							<div class="white_card_header">
+								<div class="box_header m-0">
+									<div class="main-title">
+										<h3 class="m-0">Recent Update</h3>
+									</div>
+								</div>
+							</div>
+							<div class="white_card_body">
+								<div class="Activity_timeline">
+									<ul>
+										<li>
+											<div class="activity_bell"></div>
+											<div class="timeLine_inner d-flex align-items-center">
+												<div class="activity_wrap">
+													<h6>5 min ago</h6>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+														scelerisque
+													</p>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="activity_bell "></div>
+											<div class="timeLine_inner d-flex align-items-center">
+												<div class="activity_wrap">
+													<h6>5 min ago</h6>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+														scelerisque
+													</p>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="activity_bell bell_lite"></div>
+											<div class="timeLine_inner d-flex align-items-center">
+												<div class="activity_wrap">
+													<h6>5 min ago</h6>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+														scelerisque
+													</p>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="activity_bell bell_lite"></div>
+											<div class="timeLine_inner d-flex align-items-center">
+												<div class="activity_wrap">
+													<h6>5 min ago</h6>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+														scelerisque
+													</p>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					</div>
+					
+
+
+				</div>
+			</div>
+		</div>
+
+		<div th:replace = "fragments/footer :: footer"></div>
+	</section>
+	<div th:replace = "fragments/misc :: chat"></div>
+	<div th:replace = "fragments/misc :: up"></div>
+	<script src="js/jquery1-3.4.1.min.js"></script>
+
+	<script src="js/popper1.min.js"></script>
+
+	<script src="js/bootstrap1.min.js"></script>
+
+	<script src="js/metisMenu.js"></script>
+
+	<script src="vendors/count_up/jquery.waypoints.min.js"></script>
+
+	<script src="vendors/chartlist/Chart.min.js"></script>
+
+	<script src="vendors/count_up/jquery.counterup.min.js"></script>
+
+	<script src="vendors/niceselect/js/jquery.nice-select.min.js"></script>
+
+	<script src="vendors/owl_carousel/js/owl.carousel.min.js"></script>
+
+	<script src="vendors/datatable/js/jquery.dataTables.min.js"></script>
+	<script src="vendors/datatable/js/dataTables.responsive.min.js"></script>
+	<script src="vendors/datatable/js/dataTables.buttons.min.js"></script>
+	<script src="vendors/datatable/js/buttons.flash.min.js"></script>
+	<script src="vendors/datatable/js/jszip.min.js"></script>
+	<script src="vendors/datatable/js/pdfmake.min.js"></script>
+	<script src="vendors/datatable/js/vfs_fonts.js"></script>
+	<script src="vendors/datatable/js/buttons.html5.min.js"></script>
+	<script src="vendors/datatable/js/buttons.print.min.js"></script>
+
+	<script src="vendors/datepicker/datepicker.js"></script>
+	<script src="vendors/datepicker/datepicker.en.js"></script>
+	<script src="vendors/datepicker/datepicker.custom.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="vendors/chartjs/roundedBar.min.js"></script>
+
+	<script src="vendors/progressbar/jquery.barfiller.js"></script>
+
+	<script src="vendors/tagsinput/tagsinput.js"></script>
+
+	<script src="vendors/text_editor/summernote-bs4.js"></script>
+	<script src="vendors/am_chart/amcharts.js"></script>
+
+	<script src="vendors/scroll/perfect-scrollbar.min.js"></script>
+	<script src="vendors/scroll/scrollable-custom.js"></script>
+
+	<script src="vendors/vectormap-home/vectormap-2.0.2.min.js"></script>
+	<script src="vendors/vectormap-home/vectormap-world-mill-en.js"></script>
+
+	<script src="vendors/apex_chart/apex-chart2.js"></script>
+	<script src="vendors/apex_chart/apex_dashboard.js"></script>
+	<script src="vendors/echart/echarts.min.js"></script>
+	<script src="vendors/chart_am/core.js"></script>
+	<script src="vendors/chart_am/charts.js"></script>
+	<script src="vendors/chart_am/animated.js"></script>
+	<script src="vendors/chart_am/kelly.js"></script>
+	<script src="vendors/chart_am/chart-custom.js"></script>
+
+	<script src="js/dashboard_init.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+
+</html>
