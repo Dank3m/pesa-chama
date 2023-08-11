@@ -7,36 +7,55 @@ import java.util.List;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
-import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.WebAttributes;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 //import com.kinduberre.jumiaapi.repository.AuditRepo;
 
 @Configuration
-public class CustomLoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
+public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler{
 	
 //	@Autowired
 //	private	AuditRepo auditRepo;
 	
+	public CustomLoginSuccessHandler() {
+        super();
+    }
+	
+	protected final Log logger = LogFactory.getLog(this.getClass());
+	
 	
 	@Override
-	protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
+	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
 			throws IOException {
-
-		String targetUrl = determineTargetUrl(authentication);
-
-		if (response.isCommitted()) {
-			return;
-		}
-		RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
-	
-		redirectStrategy.sendRedirect(request, response, targetUrl);
+		handle(request, response, authentication);
+        clearAuthenticationAttributes(request);
+		
 	}
+	
+	// IMPL
+
+    protected void handle(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException {
+        final String targetUrl = determineTargetUrl(authentication);
+
+        if (response.isCommitted()) {
+            logger.debug("Response has already been committed. Unable to redirect to " + targetUrl);
+            return;
+        }
+
+        RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+		System.out.println("Target URL: " + targetUrl);
+		redirectStrategy.sendRedirect(request, response, targetUrl);
+    }
 	
 	protected String determineTargetUrl(Authentication authentication) {
 		
@@ -67,4 +86,20 @@ public class CustomLoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
 
 		return url;
 	}
+	
+	/**
+     * Removes temporary authentication-related data which may have been stored in the session
+     * during the authentication process.
+     */
+    protected final void clearAuthenticationAttributes(final HttpServletRequest request) {
+        final HttpSession session = request.getSession(false);
+
+        if (session == null) {
+            return;
+        }
+
+        session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
+    }
+
+
 }

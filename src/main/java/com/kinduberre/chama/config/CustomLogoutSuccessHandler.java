@@ -24,7 +24,7 @@ public class CustomLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler im
       Authentication authentication) 
       throws IOException, ServletException {
 //    	auditRepo.logoutAudit(authentication.getName());
-        super.setTargetUrlParameter("/");
+        super.setTargetUrlParameter("/login");
         super.onLogoutSuccess(request, response, authentication);
     }
 }

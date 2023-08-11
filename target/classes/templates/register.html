@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 <head>
 
     <meta charset="utf-8" />
@@ -36,40 +36,55 @@
                                             <h5 class="modal-title text_white">Pesa Chama - Resister</h5>
                                         </div>
                                         <div class="modal-body">
-                                            <form>
+                                            <form th:action="@{/register}" th:object="${user}" method="post">
+												<div class="alert alert-dismissible col-sm-12" th:classappend="${condition} ? 'alert-success' : 'alert-danger'"
+													th:if="${(bindingResult != null && bindingResult.getAllErrors() != null)}">
+													<button type="button" class="close" data-dismiss="alert"
+														aria-hidden="true">x</button>
+														<ul th:each="data : ${bindingResult.getAllErrors()}">
+															<li th:text="${data.getDefaultMessage()}"></li>
+														</ul>
+												</div>
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <label class="form-label" for="firstName">First Name</label>
-                                                        <input type="text" class="form-control" placeholder="First Name">
+                                                        <input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name">
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label class="form-label" for="lastName">Last Name</label>
-                                                        <input type="text" class="form-control" placeholder="Last Name">
+                                                        <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last Name">
                                                     </div>
                                                 </div>
-                                                <div class>
-                                                    <label class="form-label" for="email">Email</label>
-                                                    <input type="email" class="form-control"
-                                                        placeholder="Enter your email">
+                                                <div class="row">
+													<div class="col-lg-6">
+	                                                    <label class="form-label" for="email">Email</label>
+	                                                    <input type="email" class="form-control" th:field="*{email}"
+	                                                        placeholder="Enter your email">
+                                                    </div>
+                                                    <div class="col-lg-6">
+	                                                    <label class="form-label" for="phone">Phone</label>
+	                                                    <input type="tel" class="form-control" th:field="*{phone}"
+	                                                        placeholder="Enter your email">
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <label class="form-label" for="password">Password</label>
-                                                        <input type="password" class="form-control" placeholder="Password">
+                                                        <input type="password" class="form-control" placeholder="Password" th:field="*{password}">
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label class="form-label" for="confirmPassword">Confirm your Password</label>
-                                                        <input type="password" class="form-control" placeholder="Confirm your Password">
+                                                        <input type="password" class="form-control" th:field="*{confirmPassword}" placeholder="Confirm your Password">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-6">
-                                                        <label class="form-label" for="idNumber">ID Number</label>
-                                                        <input type="text" class="form-control" placeholder="ID No">
+                                                        <label class="form-label" for="idNo">ID Number</label>
+                                                        <input type="text" class="form-control" th:field="*{idNo}" placeholder="ID No">
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label class="form-label" for="dob">Date of Birth</label>
-                                                        <input type="date" class="form-control" placeholder="DOB">
+                                                        <input type="date" class="form-control" th:field="*{dob}" placeholder="DOB">
                                                     </div>
                                                 </div>
                                                 <button type="submit" class="btn_1 full_width text-center"> Sign Up</button>

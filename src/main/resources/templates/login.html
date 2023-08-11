@@ -36,16 +36,20 @@
                                             <h5 class="modal-title text_white">Pesa Chama - Login</h5>
                                         </div>
                                         <div class="modal-body">
-                                            <form>
+                                            <form th:action="@{/login}" method="post">
                                                 <div class>
                                                     <label class="form-label" for="email">Email</label>
                                                     <input type="email" class="form-control"
-                                                        placeholder="Enter your email">
+                                                        placeholder="Enter your email" name="email">
                                                 </div>
                                                 <div class>
                                                     <label class="form-label" for="password">Password</label>
-                                                    <input type="password" class="form-control" placeholder="Password">
+                                                    <input type="password" class="form-control" placeholder="Password" name="password">
                                                 </div>
+                                                <div align="center" th:if="${param.error}">
+													<p style="font-size: 20; color: #FF1C19; font-weight: bold;">Email or
+														Password is invalid.</p>
+												</div>
 
                                                 <button type="submit" class="btn_1 full_width text-center">Login</button>
                                                 <p>Need an account? <a data-bs-toggle="modal" data-bs-target="#sing_up"
